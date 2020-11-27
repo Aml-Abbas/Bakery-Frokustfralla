@@ -1,1 +1,47 @@
-<p>bakery-order-details works!</p>
+<mat-toolbar class="toolbar" color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon (click)="navigateBack()">arrow_back</mat-icon>
+  </button>
+  <span>{{title}}</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>print</mat-icon>
+  </button>
+</mat-toolbar>
+
+
+<div class="container">
+<h2>Sammanfattning</h2>
+  <mat-list>
+    <mat-list-item mat-ripple *ngFor="let product of itemDetails.products">
+      <img mat-list-avatar src="../../../assets/img/product-placeholder.png">
+      <h3 matLine> {{product.name}} fralla 1</h3>
+      <h3> 3 styck</h3>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+
+
+<h2 style="margin-top: 20px">Detaljer</h2>
+
+  <h3 mat-line style="margin-top: 20px;"> Order Id </h3>
+  <mat-list>
+    <mat-list-item mat-ripple *ngFor="let product of itemDetails.products">
+      <img mat-list-avatar src="../../../assets/img/product-placeholder.png">
+      <h3 matLine> {{product.name}} fralla 1</h3>
+      <h3> 3 styck</h3>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+
+  <h3 mat-line style="margin-top: 20px;"> Order Id </h3>
+  <mat-list>
+    <mat-list-item mat-ripple *ngFor="let product of itemDetails.products">
+      <img mat-list-avatar src="../../../assets/img/product-placeholder.png">
+      <h3 matLine> {{product.name}} fralla 1</h3>
+      <h3> 3 styck</h3>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+
+</div>
