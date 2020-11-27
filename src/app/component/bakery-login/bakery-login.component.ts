@@ -23,6 +23,11 @@ export class BakeryLoginComponent implements OnInit {
 
   public login(): void {
     // log in if credentials are correct
+    if (this.checkCred()) {
+      this.router.navigate(
+        ['/bakery-orders'],
+        {replaceUrl: true, relativeTo: this.aRoute});
+    }
   }
 
   public checkCred(): boolean {
