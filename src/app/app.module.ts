@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { BakeryLoginComponent } from './component/bakery-login/bakery-login.component';
 import { BakeryOrdersComponent } from './component/bakery-orders/bakery-orders.component';
 import { BakeryOrderDetailsComponent } from './component/bakery-order-details/bakery-order-details.component';
-import {FormsModule} from '@angular/forms';
+import { PasswordComponent } from './component/password/password.component';
 
+import {FormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
@@ -17,7 +18,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
 import {MatListModule} from '@angular/material/list';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { PasswordResetComponent } from './component/password-reset/password-reset.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 
@@ -29,7 +29,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BakeryLoginComponent,
     BakeryOrdersComponent,
     BakeryOrderDetailsComponent,
-    PasswordResetComponent
+    PasswordComponent
   ],
   imports: [
     BrowserModule,
