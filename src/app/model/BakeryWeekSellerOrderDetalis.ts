@@ -1,6 +1,6 @@
 import {BakeryDetailsItem} from './BakeryDetailsItem';
 
-export class BakeryWeekOrdersItemDetails {
+export class BakeryWeekSellerOrderDetails {
   seller: string;
   mobileNumber: string;
   total: number;

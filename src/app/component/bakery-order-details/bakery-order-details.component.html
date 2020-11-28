@@ -11,37 +11,46 @@
 
 
 <div class="container">
-<h2>Sammanfattning</h2>
-  <mat-list>
-    <mat-list-item mat-ripple *ngFor="let product of itemDetails.products">
-      <img mat-list-avatar src="../../../assets/img/product-placeholder.png">
-      <h3 matLine> {{product.name}} fralla 1</h3>
-      <h3> 3 styck</h3>
-      <mat-divider></mat-divider>
-    </mat-list-item>
-  </mat-list>
+  <mat-accordion class="example-headers-align" [multi]="true">
+
+    <mat-expansion-panel [expanded]="expanded">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Sammanfattning
+        </mat-panel-title>
+        <mat-panel-description>
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item *ngFor="let item of summary">
+          <img matListAvatar src="../../../assets/img/profile-photo-placeholder.png" alt="...">
+          <h3 matLine> {{item.name}} </h3>
+          <span> {{item.count}} </span>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="expanded">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Detaljer
+        </mat-panel-title>
+        <mat-panel-description>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-list *ngFor="let orderId of orderIds()">
+        <h3 matSubheader >Beställning #{{orderId}}</h3>
+        <mat-list-item *ngFor="let item of sellerItems(orderId)">
+          <h3 mat-line> {{item.name}} </h3>
+          <span> {{item.count}} </span>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
 
 
-<h2 style="margin-top: 20px">Detaljer</h2>
+  </mat-accordion>
 
-  <h3 mat-line style="margin-top: 20px;"> Order Id </h3>
-  <mat-list>
-    <mat-list-item mat-ripple *ngFor="let product of itemDetails.products">
-      <img mat-list-avatar src="../../../assets/img/product-placeholder.png">
-      <h3 matLine> {{product.name}} fralla 1</h3>
-      <h3> 3 styck</h3>
-      <mat-divider></mat-divider>
-    </mat-list-item>
-  </mat-list>
-
-  <h3 mat-line style="margin-top: 20px;"> Order Id </h3>
-  <mat-list>
-    <mat-list-item mat-ripple *ngFor="let product of itemDetails.products">
-      <img mat-list-avatar src="../../../assets/img/product-placeholder.png">
-      <h3 matLine> {{product.name}} fralla 1</h3>
-      <h3> 3 styck</h3>
-      <mat-divider></mat-divider>
-    </mat-list-item>
-  </mat-list>
 
 </div>

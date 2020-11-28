@@ -31,7 +31,7 @@ export class BakeryOrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.orderDetails.currentOrderId$.subscribe(sellerId => this.sellerId = sellerId);
+    this.orderDetails.currentSellerId$.subscribe(sellerId => this.sellerId = sellerId);
   }
   public navigateBack(): void {
     this.router.navigate(['/bakery-login'], {relativeTo: this.aRoute});  }
@@ -45,7 +45,7 @@ export class BakeryOrdersComponent implements OnInit {
   }
 
   navigateToDetails(sellerId: string): void {
-    this.orderDetails.setOrderId(sellerId);
+    this.orderDetails.setSellerId(sellerId);
     this.router.navigate(['/bakery-order-details'], {relativeTo: this.aRoute});
   }
 }

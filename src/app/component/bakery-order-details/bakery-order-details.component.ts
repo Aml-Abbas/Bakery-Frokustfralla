@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-import {BakeryWeekOrdersItemDetails} from '../../model/BakeryWeekOrderItemDetalis';
+import {BakeryWeekSellerOrderDetails} from '../../model/BakeryWeekSellerOrderDetalis';
 import {OrderDetailsService} from '../../../services/order-details.service';
+import {SummaryItem} from '../../model/SummaryItem';
 
 @Component({
   selector: 'app-bakery-order-details',
@@ -13,24 +14,36 @@ import {OrderDetailsService} from '../../../services/order-details.service';
 export class BakeryOrderDetailsComponent implements OnInit {
   location: Location;
   title = 'Order details';
-  orderId = '';
-  itemDetails: BakeryWeekOrdersItemDetails | undefined;
-
-
+  sellerId = '';
+  orderProducts: BakeryWeekSellerOrderDetails | undefined;
+  expanded = true;
+  summary: SummaryItem[];
+  details: SummaryItem[];
   constructor(location: Location,
               private orderDetailsService: OrderDetailsService) {
     this.location = location;
-
+    this.summary = [];
+    this.details = [];
   }
 
   ngOnInit(): void {
-    this.orderDetailsService.currentOrderId$.subscribe(orderId => this.orderId = orderId);
-    console.log('order id = ' + this.orderId);
-    this.title = 'Beställning #' + this.orderId;
-    this.itemDetails = this.orderDetailsService.fetchOrdersItemDetails();
+    this.orderDetailsService.currentSellerId$.subscribe(sellerId => this.sellerId = sellerId);
+    console.log('order id = ' + this.sellerId);
+    this.title = 'Beställning #' + this.sellerId;
+    this.orderProducts = this.orderDetailsService.fetchSellerOrderDetails();
+    this.summary = this.orderDetailsService.getWeekSummary();
+    this.details = this.orderDetailsService.getWeekDetails();
   }
 
+  sellerItems(sellerId: string): SummaryItem[] {
+    return this.details.filter(e => {
+      return e.sellerId === sellerId
+    });
+  }
 
+  orderIds(): string[] {
+    return ['1', '2'];
+  }
   navigateBack(): void {
     this.location.back();
   }
