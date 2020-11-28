@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {OrderDetailsService} from '../../../services/order-details.service';
-import {BakeryWeekOrdersItem} from '../../model/BakeryWeekOrderItem';
+import {BakeryWeekSellers} from '../../model/BakeryWeekSellers';
 
 @Component({
   selector: 'app-bakery-orders',
@@ -16,8 +16,8 @@ export class BakeryOrdersComponent implements OnInit {
 
   location: Location;
   router: Router;
-  orders: BakeryWeekOrdersItem[];
-  orderId = '';
+  sellers: BakeryWeekSellers[] ;
+  sellerId = '';
 
   constructor(location: Location,
               router: Router,
@@ -25,28 +25,27 @@ export class BakeryOrdersComponent implements OnInit {
               private aRoute: ActivatedRoute) {
     this.location = location;
     this.router = router;
-    this.orders = [];
-    this.fetchBakeryWeekOrders();
+    this.sellers = [];
+    this.fetchBakeryWeekSellers();
 
   }
 
   ngOnInit(): void {
-    this.orderDetails.currentOrderId$.subscribe(orderId => this.orderId = orderId);
+    this.orderDetails.currentOrderId$.subscribe(sellerId => this.sellerId = sellerId);
   }
   public navigateBack(): void {
-    this.location.back();
-  }
+    this.router.navigate(['/bakery-login'], {relativeTo: this.aRoute});  }
 
-  fetchBakeryWeekOrders(): void {
+  fetchBakeryWeekSellers(): void {
     for (let i = 0; i < 10; i++) {
-      this.orders.push(
-        new BakeryWeekOrdersItem('Säljare ' + (i + 1), (i + 9).toString(), 30, 'Fralla')
+      this.sellers.push(
+        new BakeryWeekSellers('Säljare ' + (i + 1), (i + 9).toString(),'Fralla')
       );
     }
   }
 
-  navigateToDetails(orderId: string): void {
-    this.orderDetails.setOrderId(orderId);
+  navigateToDetails(sellerId: string): void {
+    this.orderDetails.setOrderId(sellerId);
     this.router.navigate(['/bakery-order-details'], {relativeTo: this.aRoute});
   }
 }

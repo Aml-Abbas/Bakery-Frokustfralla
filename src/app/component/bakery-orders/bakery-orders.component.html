@@ -14,10 +14,10 @@
 
   <h2>Aktuell denna vecka</h2>
   <mat-list>
-    <mat-list-item mat-ripple *ngFor="let order of orders" (click)="navigateToDetails(order.orderId)">
+    <mat-list-item mat-ripple *ngFor="let seller of sellers" (click)="navigateToDetails(seller.sellerId)">
       <img mat-list-avatar src="../../../assets/img/product-placeholder.png">
-      <h3 matLine> {{order.seller}} </h3>
-      <p matLine> {{order.firstProduct}}... </p>
+      <h3 matLine> {{seller.sellerName}} </h3>
+      <p matLine> {{seller.firstProduct}}... </p>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
