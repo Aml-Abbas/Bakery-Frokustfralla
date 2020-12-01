@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {OrderDetailsService} from '../../../services/order-details.service';
-import {BakeryWeekSellers} from '../../model/BakeryWeekSellers';
+import {BakerySellers} from '../../model/BakerySellers';
 import {AuthService} from '../../../services/auth.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class BakeryOrdersComponent implements OnInit {
 
   location: Location;
   router: Router;
-  sellers: BakeryWeekSellers[] ;
+  sellers: BakerySellers[] ;
   sellerId = '';
 
   constructor(location: Location,
@@ -41,7 +41,7 @@ export class BakeryOrdersComponent implements OnInit {
   fetchBakeryWeekSellers(): void {
     for (let i = 0; i < 10; i++) {
       this.sellers.push(
-        new BakeryWeekSellers('Säljare ' + (i + 1), (i + 9).toString(),'Fralla')
+        new BakerySellers('Säljare ' + (i + 1), (i + 9).toString(),'Fralla')
       );
     }
   }

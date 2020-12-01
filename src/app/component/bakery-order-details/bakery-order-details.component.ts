@@ -31,8 +31,8 @@ export class BakeryOrderDetailsComponent implements OnInit {
     console.log('order id = ' + this.sellerId);
     this.title = 'Beställning #' + this.sellerId;
     this.orderProducts = this.orderDetailsService.fetchSellerOrderDetails();
-    this.summary = this.orderDetailsService.getWeekSummary();
-    this.details = this.orderDetailsService.getWeekDetails();
+    this.summary = this.orderDetailsService.getSummary();
+    this.details = this.orderDetailsService.getDetails();
   }
 
   sellerItems(sellerId: string): SummaryItem[] {

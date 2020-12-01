@@ -19,21 +19,6 @@ export class OrderDetailsService {
     this.sellerIdSource.next(sellerId);
   }
 
-  fetchProducts(): BakeryDetailsItem[] {
-    console.log('seller id in fetchProducts() = ' + this.currentSellerId$);
-    const products: BakeryDetailsItem[] = [];
-    for (let i = 0; i < 3; i++) {
-      products.push(
-        new BakeryDetailsItem(
-          '10',
-          i + 1,
-          'i'
-        )
-      );
-    }
-    return products;
-  }
-
   fetchSellerOrderDetails(): BakeryWeekSellerOrderDetails {
     const products: BakeryDetailsItem[] = [];
     for (let i = 0; i < 3; i++) {
@@ -54,7 +39,7 @@ export class OrderDetailsService {
 
   }
 
-  getWeekSummary(): SummaryItem[] {
+  getSummary(): SummaryItem[] {
     return [
       new SummaryItem('1', 'Baugette', 3, '', '1'),
       new SummaryItem('1', 'Donut', 4, '', '1'),
@@ -62,7 +47,7 @@ export class OrderDetailsService {
     ];
   }
 
-  getWeekDetails(): SummaryItem[] {
+  getDetails(): SummaryItem[] {
     return [
       new SummaryItem('1', 'Baugette', 2, '', '1'),
       new SummaryItem('2', 'Baugette', 1, '', '1'),

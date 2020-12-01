@@ -1,5 +1,5 @@
 
-export class BakeryWeekSellers {
+export class BakerySellers {
   sellerName: string;
   sellerId: string;
   firstProduct: string;
