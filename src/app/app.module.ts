@@ -19,6 +19,8 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatListModule} from '@angular/material/list';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { UpdatePasswordComponent } from './component/update-password/update-password.component';
+import { SettingComponent } from './component/setting/setting.component';
 
 
 
@@ -29,7 +31,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BakeryLoginComponent,
     BakeryOrdersComponent,
     BakeryOrderDetailsComponent,
-    PasswordComponent
+    PasswordComponent,
+    UpdatePasswordComponent,
+    SettingComponent
   ],
   imports: [
     BrowserModule,

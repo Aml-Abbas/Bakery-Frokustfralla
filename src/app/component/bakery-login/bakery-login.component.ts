@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-bakery-login',
@@ -14,7 +15,8 @@ export class BakeryLoginComponent implements OnInit {
   email = '';
 
   constructor(router: Router,
-              private aRoute: ActivatedRoute) {
+              private aRoute: ActivatedRoute,
+              private authServie: AuthService) {
     this.router = router;
   }
 
