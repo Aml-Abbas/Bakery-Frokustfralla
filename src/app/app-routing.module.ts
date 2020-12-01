@@ -6,15 +6,17 @@ import {BakeryOrderDetailsComponent} from './component/bakery-order-details/bake
 import {PasswordComponent} from './component/password/password.component';
 import {UpdatePasswordComponent} from './component/update-password/update-password.component';
 import {BakeryOrderHistoryComponent} from './component/bakery-order-history/bakery-order-history.component';
+import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: BakeryLoginComponent},
+  {path: '', component: BakeryOrdersComponent, canActivate: [AuthGuard]},
   {path: 'bakery-login', component: BakeryLoginComponent},
-  {path: 'bakery-orders', component: BakeryOrdersComponent},
-  {path: 'bakery-order-details', component: BakeryOrderDetailsComponent},
-  {path: 'password', component: PasswordComponent},
-  {path: 'update-password', component: UpdatePasswordComponent},
-  {path: 'bakery-order-history', component: BakeryOrderHistoryComponent}
+  {path: 'bakery-orders', component: BakeryOrdersComponent, canActivate: [AuthGuard]},
+  {path: 'bakery-order-details', component: BakeryOrderDetailsComponent , canActivate: [AuthGuard]},
+  {path: 'password', component: PasswordComponent, canActivate: [AuthGuard]},
+  {path: 'update-password', component: UpdatePasswordComponent, canActivate: [AuthGuard]},
+  {path: 'bakery-order-history', component: BakeryOrderHistoryComponent, canActivate: [AuthGuard]},
+
 ];
 
 @NgModule({

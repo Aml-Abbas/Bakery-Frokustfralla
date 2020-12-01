@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {OrderDetailsService} from '../../../services/order-details.service';
 import {BakeryWeekSellers} from '../../model/BakeryWeekSellers';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-bakery-orders',
@@ -21,6 +22,7 @@ export class BakeryOrdersComponent implements OnInit {
 
   constructor(location: Location,
               router: Router,
+              private authService: AuthService,
               private orderDetails: OrderDetailsService,
               private aRoute: ActivatedRoute) {
     this.location = location;
@@ -50,11 +52,11 @@ export class BakeryOrdersComponent implements OnInit {
   }
 
   logOut() {
-    if (true) {
+    this.authService.signOut();
       this.router.navigate(
         ['/bakery-login'],
         {replaceUrl: true, relativeTo: this.aRoute});
-    }
+
   }
 
   changePassword(){

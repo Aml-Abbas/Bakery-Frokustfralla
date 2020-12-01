@@ -37,8 +37,8 @@ export class UpdatePasswordComponent implements OnInit {
   }
 
   navigateBack() {
-    this.location.back();
-  }
+    this.router.navigate(
+      ['/bakery-orders'], {replaceUrl: true});  }
 
   confirm() {
    /* if (this.hashPassword(this.enteredCurrentPassword.trim())
@@ -57,7 +57,9 @@ export class UpdatePasswordComponent implements OnInit {
       this.passwordService.saveNewPassword(this.enteredNewPassword);
       this.location.back();
     }*/
-    this.location.back();
+
+    this.router.navigate(
+      ['/bakery-orders'], {replaceUrl: true});
   }
 
   hashPassword(pass: string) {

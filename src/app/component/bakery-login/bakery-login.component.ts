@@ -33,7 +33,11 @@ export class BakeryLoginComponent implements OnInit {
   }
 
   public checkCred(): boolean {
-    return true;
+    this.authServie.signIn('','');
+    if (this.authServie.isSignedIn()){
+      return true;
+    }
+    return false;
   }
 
 }
