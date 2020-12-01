@@ -7,6 +7,8 @@ import { BakeryLoginComponent } from './component/bakery-login/bakery-login.comp
 import { BakeryOrdersComponent } from './component/bakery-orders/bakery-orders.component';
 import { BakeryOrderDetailsComponent } from './component/bakery-order-details/bakery-order-details.component';
 import { PasswordComponent } from './component/password/password.component';
+import { BakeryOrderHistoryComponent } from './component/bakery-order-history/bakery-order-history.component';
+import { UpdatePasswordComponent } from './component/update-password/update-password.component';
 
 import {FormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
@@ -19,12 +21,10 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatListModule} from '@angular/material/list';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { UpdatePasswordComponent } from './component/update-password/update-password.component';
-import { SettingComponent } from './component/setting/setting.component';
-import { BakeryOrderHistoryComponent } from './component/bakery-order-history/bakery-order-history.component';
-
-
-
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,6 @@ import { BakeryOrderHistoryComponent } from './component/bakery-order-history/ba
     BakeryOrderDetailsComponent,
     PasswordComponent,
     UpdatePasswordComponent,
-    SettingComponent,
     BakeryOrderHistoryComponent
   ],
   imports: [
@@ -51,7 +50,11 @@ import { BakeryOrderHistoryComponent } from './component/bakery-order-history/ba
     MatListModule,
     MatRippleModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule,
+    MatExpansionModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {PasswordService} from '../../../services/password.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-update-password',
   templateUrl: './update-password.component.html',
   styleUrls: ['./update-password.component.scss'],
   providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}]
-
 })
+
 export class UpdatePasswordComponent implements OnInit {
   title = 'Uppdatera ditt lösenord';
 
@@ -18,16 +19,17 @@ export class UpdatePasswordComponent implements OnInit {
   enteredNewPassword2 = '';
 
   hideCurrent = true;
-
-  hide = true;
-  // @ts-ignore
   location: Location;
+  router: Router;
+  hide = true;
 
-  // @ts-ignore
-  constructor(private location: Location,
+  constructor(location: Location,
+              router: Router,
               private passwordService: PasswordService,
               private snackBar: MatSnackBar) {
+
     this.location = location;
+    this.router = router;
 
   }
 
@@ -39,7 +41,7 @@ export class UpdatePasswordComponent implements OnInit {
   }
 
   confirm() {
-    if (this.hashPassword(this.enteredCurrentPassword.trim())
+   /* if (this.hashPassword(this.enteredCurrentPassword.trim())
       !== this.passwordService.getUsersCurrentPassword('')) {
       this.snackBar.open('Fel nuvarande lösenord!', 'Ok', {
         duration: 2000
@@ -54,7 +56,8 @@ export class UpdatePasswordComponent implements OnInit {
       });
       this.passwordService.saveNewPassword(this.enteredNewPassword);
       this.location.back();
-    }
+    }*/
+    this.location.back();
   }
 
   hashPassword(pass: string) {

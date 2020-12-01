@@ -18,9 +18,6 @@
         <mat-panel-title>
           Sammanfattning
         </mat-panel-title>
-        <mat-panel-description>
-
-        </mat-panel-description>
       </mat-expansion-panel-header>
       <mat-list>
         <mat-list-item *ngFor="let item of summary">
@@ -31,13 +28,16 @@
         </mat-list-item>
       </mat-list>
     </mat-expansion-panel>
+  </mat-accordion>
+
+
+    <mat-accordion class="example-headers-align" [multi]="true">
+
     <mat-expansion-panel [expanded]="expanded">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Detaljer
         </mat-panel-title>
-        <mat-panel-description>
-        </mat-panel-description>
       </mat-expansion-panel-header>
       <mat-list *ngFor="let orderId of orderIds()">
         <h3 matSubheader >Beställning #{{orderId}}</h3>
@@ -48,8 +48,6 @@
         </mat-list-item>
       </mat-list>
     </mat-expansion-panel>
-
-
   </mat-accordion>
 
 

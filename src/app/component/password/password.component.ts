@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {Router} from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {PasswordService} from '../../../services/password.service';
 
 @Component({
   selector: 'app-password',
@@ -17,7 +19,9 @@ export class PasswordComponent implements OnInit {
   hide = true;
   router: Router;
 
-  constructor(router: Router, location: Location) {
+  constructor(router: Router, location: Location,
+              private snackBar: MatSnackBar,
+              private passwordService: PasswordService) {
     this.location = location;
     this.router = router;
 
@@ -31,10 +35,10 @@ export class PasswordComponent implements OnInit {
   }
 
   sendResetRequest(): void {
-   /* this.snackBar.open('Tack för din begäran', 'Stäng', {
+    this.snackBar.open('Tack för din begäran', 'Stäng', {
       duration: 3000
     });
     this.passwordService.requestNewPassword();
-    this.location.back();*/
+    this.location.back();
   }
 }

@@ -48,4 +48,19 @@ export class BakeryOrdersComponent implements OnInit {
     this.orderDetails.setSellerId(sellerId);
     this.router.navigate(['/bakery-order-details'], {relativeTo: this.aRoute});
   }
+
+  logOut() {
+    if (true) {
+      this.router.navigate(
+        ['/bakery-login'],
+        {replaceUrl: true, relativeTo: this.aRoute});
+    }
+  }
+
+  changePassword(){
+    this.router.navigate(
+      ['/update-password'],
+      {replaceUrl: true, relativeTo: this.aRoute});
+  }
+
 }

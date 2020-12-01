@@ -4,9 +4,8 @@ import {BakeryLoginComponent} from './component/bakery-login/bakery-login.compon
 import {BakeryOrdersComponent} from './component/bakery-orders/bakery-orders.component';
 import {BakeryOrderDetailsComponent} from './component/bakery-order-details/bakery-order-details.component';
 import {PasswordComponent} from './component/password/password.component';
-import {AuthGuard} from './guards/auth.guard';
 import {UpdatePasswordComponent} from './component/update-password/update-password.component';
-import {SettingComponent} from './component/setting/setting.component';
+import {BakeryOrderHistoryComponent} from './component/bakery-order-history/bakery-order-history.component';
 
 const routes: Routes = [
   {path: '', component: BakeryLoginComponent},
@@ -15,9 +14,7 @@ const routes: Routes = [
   {path: 'bakery-order-details', component: BakeryOrderDetailsComponent},
   {path: 'password', component: PasswordComponent},
   {path: 'update-password', component: UpdatePasswordComponent},
-  {path: 'setting', component: SettingComponent}
-
-
+  {path: 'bakery-order-history', component: BakeryOrderHistoryComponent}
 ];
 
 @NgModule({
