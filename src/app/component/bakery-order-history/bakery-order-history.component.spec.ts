@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SettingComponent } from './setting.component';
+import { BakeryOrderHistoryComponent } from './bakery-order-history.component';
 
-describe('SettingComponent', () => {
-  let component: SettingComponent;
-  let fixture: ComponentFixture<SettingComponent>;
+describe('BakeryOrderHistoryComponent', () => {
+  let component: BakeryOrderHistoryComponent;
+  let fixture: ComponentFixture<BakeryOrderHistoryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SettingComponent ]
+      declarations: [ BakeryOrderHistoryComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SettingComponent);
+    fixture = TestBed.createComponent(BakeryOrderHistoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

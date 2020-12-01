@@ -2,15 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
 @Component({
-  selector: 'app-setting',
-  templateUrl: './setting.component.html',
-  styleUrls: ['./setting.component.scss'],
+  selector: 'app-bakery-order-history',
+  templateUrl: './bakery-order-history.component.html',
+  styleUrls: ['./bakery-order-history.component.scss'],
   providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}]
 
 })
-export class SettingComponent implements OnInit {
-  title = 'Setting';
+export class BakeryOrderHistoryComponent implements OnInit {
+
   location: Location;
+  title = 'Order historik';
+
 
   constructor(location: Location) {
     this.location = location;
@@ -19,9 +21,7 @@ export class SettingComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-  navigateBack() {
+  navigateBack(): void {
     this.location.back();
   }
 }

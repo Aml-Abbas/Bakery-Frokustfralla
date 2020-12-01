@@ -21,6 +21,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { UpdatePasswordComponent } from './component/update-password/update-password.component';
 import { SettingComponent } from './component/setting/setting.component';
+import { BakeryOrderHistoryComponent } from './component/bakery-order-history/bakery-order-history.component';
 
 
 
@@ -33,7 +34,8 @@ import { SettingComponent } from './component/setting/setting.component';
     BakeryOrderDetailsComponent,
     PasswordComponent,
     UpdatePasswordComponent,
-    SettingComponent
+    SettingComponent,
+    BakeryOrderHistoryComponent
   ],
   imports: [
     BrowserModule,
